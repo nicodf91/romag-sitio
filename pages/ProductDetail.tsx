@@ -141,7 +141,7 @@ const ProductDetail: React.FC = () => {
                 {/* Actions */}
                 <div className="flex flex-col gap-4 pt-4">
                   <div className="flex items-center gap-2 text-green-700 text-sm font-bold bg-green-50 p-4 rounded-lg border border-green-100 mb-2">
-                    <Truck size={20} /> Envíos asegurados a todo el país.
+                    <Truck size={20} /> Entrega ilustrativa: la demo no cotiza ni confirma envíos.
                   </div>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -180,22 +180,22 @@ const ProductDetail: React.FC = () => {
                     <div className="bg-orange-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border border-orange-100 text-romag-orange">
                         <Flame size={36} />
                     </div>
-                    <h4 className="font-bold text-xl text-gray-900 mb-3">Máximo Rendimiento</h4>
-                    <p className="text-sm text-gray-600 leading-relaxed">Aprovechá cada gramo de leña o carbón con nuestra ingeniería de combustión avanzada.</p>
+                    <h4 className="font-bold text-xl text-gray-900 mb-3">Ficha de muestra</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">La interfaz organiza atributos comparables; los valores requieren documentación del fabricante.</p>
                 </div>
                 <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow text-center">
                     <div className="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border border-gray-100 text-gray-600">
                         <ShieldCheck size={36} />
                     </div>
-                    <h4 className="font-bold text-xl text-gray-900 mb-3">Durabilidad Extrema</h4>
-                    <p className="text-sm text-gray-600 leading-relaxed">Construido con chapas de espesor industrial. Estructura indeformable ante el calor extremo.</p>
+                    <h4 className="font-bold text-xl text-gray-900 mb-3">Comparación local</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">Podés comparar hasta tres productos de una misma categoría dentro del navegador.</p>
                 </div>
                 <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow text-center">
                     <div className="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border border-gray-100 text-gray-600">
                         <Star size={36} />
                     </div>
-                    <h4 className="font-bold text-xl text-gray-900 mb-3">Respaldo Romag</h4>
-                    <p className="text-sm text-gray-600 leading-relaxed">Más de 30 años en el mercado avalan tu compra. Repuestos garantizados de por vida.</p>
+                    <h4 className="font-bold text-xl text-gray-900 mb-3">Alcance transparente</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">No se afirman garantías, certificaciones, stock ni repuestos sin evidencia verificable.</p>
                 </div>
             </div>
         </div>

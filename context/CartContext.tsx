@@ -1,18 +1,32 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { CartItem, Product, CartContextType } from '../types';
+import { readStored, writeStored } from '../utils/storage';
+
+const CART_STORAGE_KEY = 'romag_cart_v1';
+
+function isCartItem(value: unknown): value is CartItem {
+  if (!value || typeof value !== 'object') return false;
+  const item = value as Partial<CartItem>;
+  return (
+    typeof item.id === 'string' &&
+    typeof item.name === 'string' &&
+    typeof item.price === 'number' &&
+    Number.isFinite(item.price) &&
+    typeof item.quantity === 'number' &&
+    Number.isFinite(item.quantity) &&
+    item.quantity > 0
+  );
+}
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>(() => {
-    // Load from local storage on initial render
-    const savedCart = localStorage.getItem('romag_cart');
-    return savedCart ? JSON.parse(savedCart) : [];
+    return readStored(CART_STORAGE_KEY, (value): value is CartItem[] => Array.isArray(value) && value.every(isCartItem), []);
   });
 
   useEffect(() => {
-    // Save to local storage whenever cart changes
-    localStorage.setItem('romag_cart', JSON.stringify(cart));
+    writeStored(CART_STORAGE_KEY, cart);
   }, [cart]);
 
   const addToCart = (product: Product) => {

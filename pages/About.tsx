@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { COMPANY_INFO } from '../constants';
 
 const About: React.FC = () => {
   return (
@@ -8,9 +7,9 @@ const About: React.FC = () => {
       {/* Hero */}
       <div className="bg-romag-dark text-white py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">30 Años Forjando Calidad</h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">Caso de estudio de catálogo</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-            Somos una empresa familiar dedicada a la industria metalúrgica con pasión por el fuego, la ingeniería y el diseño duradero.
+            Esta página presenta una narrativa visual de demostración; no acredita historia, certificaciones ni métricas comerciales de una empresa real.
           </p>
         </div>
       </div>
@@ -20,17 +19,17 @@ const About: React.FC = () => {
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-10 md:p-14 flex flex-col justify-center">
-              <span className="text-romag-orange font-bold tracking-widest text-xs uppercase mb-3 block">Nuestra Historia</span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">De un pequeño taller a todo el país</h2>
+              <span className="text-romag-orange font-bold tracking-widest text-xs uppercase mb-3 block">Narrativa de muestra</span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">Contenido pensado para evaluar la interfaz</h2>
               <div className="prose prose-lg text-gray-600 space-y-4">
                 <p>
-                  Estufas Romag nació hace más de tres décadas en un modesto taller metalúrgico. Fundada con el objetivo de crear soluciones de calefacción que resistieran el paso del tiempo, nuestra empresa ha crecido manteniendo intactos los valores de familia y trabajo duro.
+                  El recorrido muestra cómo podría estructurarse la presentación de una marca industrial: portada, catálogo, comparación, carrito y consulta asistida.
                 </p>
                 <p>
-                  Lo que comenzó con la fabricación de estufas a leña robustas, hoy es un catálogo completo que abarca desde calefacción de alto rendimiento hasta productos premium para jardín y cocina al aire libre.
+                  Los textos, imágenes, precios y productos se conservan como datos ilustrativos para revisar composición, responsive design y navegación.
                 </p>
                 <p>
-                  Cada producto que sale de nuestra fábrica lleva el sello de calidad Romag: materiales de primera línea, soldaduras perfectas y un diseño pensado para la eficiencia.
+                  Cualquier afirmación técnica o comercial requeriría validación del propietario antes de utilizar este frontend en producción.
                 </p>
               </div>
             </div>
@@ -47,20 +46,20 @@ const About: React.FC = () => {
         <div className="container mx-auto px-4">
            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
              <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow">
-               <div className="text-5xl font-black text-romag-orange mb-3">30+</div>
-               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Años de experiencia</div>
+               <div className="text-5xl font-black text-romag-orange mb-3">UI</div>
+               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Responsive</div>
              </div>
              <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow">
-               <div className="text-5xl font-black text-romag-orange mb-3">5k+</div>
-               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Clientes Felices</div>
+               <div className="text-5xl font-black text-romag-orange mb-3">3</div>
+               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Flujos principales</div>
              </div>
              <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow">
-               <div className="text-5xl font-black text-romag-orange mb-3">100%</div>
-               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Industria Nacional</div>
+               <div className="text-5xl font-black text-romag-orange mb-3">Local</div>
+               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Estado versionado</div>
              </div>
              <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow">
-               <div className="text-5xl font-black text-romag-orange mb-3">ISO</div>
-               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Calidad Certificada</div>
+               <div className="text-5xl font-black text-romag-orange mb-3">Demo</div>
+               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Sin backend</div>
              </div>
            </div>
         </div>
@@ -69,17 +68,17 @@ const About: React.FC = () => {
       {/* CTA */}
       <div className="container mx-auto px-4 py-24 text-center">
         <div className="max-w-4xl mx-auto bg-white p-12 rounded-2xl shadow-xl border border-gray-200">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Unite a nuestra red</h2>
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Explorá el prototipo</h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-10 text-lg">
-            ¿Tenés un comercio y querés vender productos de calidad asegurada? Buscamos representantes en todo el país.
+            Recorré el catálogo y el comparador. El formulario de contacto explica el límite de esta demostración y no recopila datos.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/contacto" className="bg-romag-dark text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition-colors shadow-lg">
-              CONTACTAR FÁBRICA
+              VER ALCANCE DE CONTACTO
             </Link>
-            <a href={COMPANY_INFO.whatsappLink} className="bg-romag-orange text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition-colors shadow-lg">
-              ENVIAR WHATSAPP
-            </a>
+            <Link to="/catalogo" className="bg-romag-orange text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition-colors shadow-lg">
+              VER CATÁLOGO
+            </Link>
           </div>
         </div>
       </div>

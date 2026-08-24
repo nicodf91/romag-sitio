@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Flame, Instagram, Facebook } from 'lucide-react';
+import { Flame } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -13,12 +13,8 @@ const Footer: React.FC = () => {
             <span className="text-xl font-bold">ESTUFAS ROMAG</span>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
-            Más de 30 años llevando calor de hogar a las familias argentinas. Calidad industrial, diseño y durabilidad.
+            Demo de catálogo con carrito, comparador y preparación de consultas.
           </p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-romag-orange transition-colors"><Instagram size={20} /></a>
-            <a href="#" className="hover:text-romag-orange transition-colors"><Facebook size={20} /></a>
-          </div>
         </div>
 
         {/* Links */}
@@ -35,25 +31,18 @@ const Footer: React.FC = () => {
 
         {/* Contact */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-romag-orange">Contacto</h3>
+          <h3 className="text-lg font-bold mb-4 text-romag-orange">Alcance</h3>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li>Parque Industrial</li>
-            <li>Buenos Aires, Argentina</li>
-            <li className="pt-2 font-semibold">Ventas:</li>
-            <li>+54 9 11 1234-5678</li>
-            <li>info@estufasromag.com</li>
-            <li className="pt-2">Lun a Vie: 8:00 - 17:00hs</li>
+            <li>Sin backend ni pagos</li>
+            <li>Datos comerciales ficticios</li>
+            <li>Sin suscripción ni almacenamiento de PII</li>
           </ul>
         </div>
 
-        {/* Newsletter (Mock) */}
+        {/* Portfolio scope */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-romag-orange">Novedades</h3>
-          <p className="text-sm text-gray-400 mb-4">Recibí ofertas y consejos para tu estufa.</p>
-          <form className="flex flex-col gap-2" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Tu email" className="bg-gray-800 border border-gray-700 p-2 rounded text-sm focus:outline-none focus:border-romag-orange" />
-            <button className="bg-romag-gray hover:bg-romag-orange transition-colors py-2 rounded text-sm font-bold">SUSCRIBIRME</button>
-          </form>
+          <h3 className="text-lg font-bold mb-4 text-romag-orange">Portfolio</h3>
+          <p className="text-sm text-gray-400 mb-4">Implementación frontend para demostrar arquitectura de estado, navegación y UI responsive.</p>
         </div>
       </div>
       <div className="border-t border-gray-800 mt-12 pt-8 text-center text-xs text-gray-500">

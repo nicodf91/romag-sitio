@@ -1,5 +1,5 @@
 {
   "name": "Estufas Romag",
-  "description": "Sitio web oficial de Estufas Romag. Catálogo de estufas, fogoneros, parrillas y accesorios de alta calidad industrial.",
+  "description": "Demo frontend de catálogo de calefacción con navegación, comparación, carrito local y preparación opcional de consultas.",
   "requestFramePermissions": []
 }

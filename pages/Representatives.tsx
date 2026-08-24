@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { REPRESENTATIVES, COMPANY_INFO } from '../constants';
-import { MapPin, Search, Phone, Flame, Store } from 'lucide-react';
+import { REPRESENTATIVES } from '../constants';
+import { MapPin, Search, Flame, Store } from 'lucide-react';
 
 const Representatives: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -12,7 +12,7 @@ const Representatives: React.FC = () => {
     rep.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Sort logic: Casa Romag Oficial (id '5') always first
+  // Keep the featured demo entry first.
   const sortedReps = [...filteredReps].sort((a, b) => {
     if (a.id === '5') return -1;
     if (b.id === '5') return 1;
@@ -23,8 +23,8 @@ const Representatives: React.FC = () => {
     <div className="bg-gray-50 min-h-screen pb-20">
       <div className="bg-romag-dark text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-extrabold mb-4">Puntos de Venta</h1>
-          <p className="text-gray-400 text-lg">Encontrá el representante Romag más cercano a tu domicilio.</p>
+          <h1 className="text-4xl font-extrabold mb-4">Puntos de venta de muestra</h1>
+          <p className="text-gray-400 text-lg">Dataset ilustrativo para demostrar búsqueda y filtrado; no identifica distribuidores activos.</p>
         </div>
       </div>
 
@@ -46,7 +46,7 @@ const Representatives: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {sortedReps.length > 0 ? (
               sortedReps.map(rep => {
-                const isOfficial = rep.id === '5'; // ID 5 is Casa Romag Oficial
+                const isOfficial = rep.id === '5';
                 
                 return (
                   <div 
@@ -62,7 +62,7 @@ const Representatives: React.FC = () => {
                     {/* Badge for Official Store */}
                     {isOfficial && (
                       <div className="absolute top-0 right-0 bg-romag-orange text-white text-[10px] font-bold px-4 py-1.5 rounded-bl-xl rounded-tr-lg flex items-center gap-1 z-10 shadow-sm">
-                        <Flame size={10} fill="currentColor" /> CASA CENTRAL
+                        <Flame size={10} fill="currentColor" /> ENTRADA DESTACADA
                       </div>
                     )}
 
@@ -79,14 +79,9 @@ const Representatives: React.FC = () => {
                     
                     <p className="text-gray-600 font-medium mb-2 text-sm uppercase tracking-wide">{rep.city}, {rep.province}</p>
                     
-                    <a href={`tel:${rep.phone}`} className="flex items-center gap-2 text-base text-gray-600 hover:text-romag-dark mt-4 font-semibold">
-                      <Phone size={16} /> {rep.phone}
-                    </a>
+                    <p className="mt-4 text-sm font-semibold text-gray-500">Teléfono de muestra: {rep.phone}</p>
                     
-                    <a 
-                      href={`https://www.google.com/maps/search/?api=1&query=${rep.lat},${rep.lng}`}
-                      target="_blank"
-                      rel="noreferrer"
+                    <p
                       className={`
                         block mt-6 text-center text-sm font-bold rounded-lg py-3 transition-colors border-2
                         ${isOfficial
@@ -95,18 +90,14 @@ const Representatives: React.FC = () => {
                         }
                       `}
                     >
-                      VER EN MAPA
-                    </a>
+                      UBICACIÓN ILUSTRATIVA
+                    </p>
                   </div>
                 );
               })
             ) : (
               <div className="col-span-2 text-center py-12 bg-gray-50 rounded-lg border border-dashed border-gray-300">
-                <p className="text-gray-500 font-medium">No encontramos representantes con esa búsqueda.</p>
-                <p className="text-sm text-gray-400 mt-2 mb-4">¿Querés comprar directo de fábrica?</p>
-                <a href={COMPANY_INFO.whatsappLink} className="text-romag-orange font-bold hover:underline inline-flex items-center gap-2">
-                   Contactanos por WhatsApp
-                </a>
+                <p className="text-gray-500 font-medium">No hay entradas de muestra para esa búsqueda.</p>
               </div>
             )}
           </div>
@@ -114,16 +105,10 @@ const Representatives: React.FC = () => {
 
         {/* Be a rep CTA */}
         <div className="mt-12 text-center bg-white p-12 rounded-xl border border-gray-200 shadow-sm max-w-4xl mx-auto">
-           <h2 className="text-2xl font-bold mb-4 text-gray-900">¿Querés ser representante oficial?</h2>
+           <h2 className="text-2xl font-bold mb-4 text-gray-900">Alcance del módulo</h2>
            <p className="text-gray-600 mb-8 max-w-xl mx-auto text-lg">
-             Sumá productos de alta rotación y calidad garantizada a tu negocio. Ofrecemos márgenes competitivos, material de marketing y soporte técnico.
+             Este módulo demuestra filtrado local y estados visuales. No valida comercios, disponibilidad, teléfonos ni coordenadas.
            </p>
-           <a 
-             href={`mailto:ventas@estufasromag.com?subject=Solicitud Representante`}
-             className="bg-romag-dark text-white px-10 py-4 rounded-lg font-bold hover:bg-gray-800 transition-colors shadow-lg"
-           >
-             QUIERO SER REPRESENTANTE
-           </a>
         </div>
       </div>
     </div>

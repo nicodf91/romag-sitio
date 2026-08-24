@@ -1,17 +1,29 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Product, CompareContextType } from '../types';
+import { readStored, writeStored } from '../utils/storage';
+
+const COMPARE_STORAGE_KEY = 'romag_compare_v1';
+
+function isProduct(value: unknown): value is Product {
+  if (!value || typeof value !== 'object') return false;
+  const product = value as Partial<Product>;
+  return typeof product.id === 'string' && typeof product.name === 'string' && typeof product.category === 'string';
+}
 
 const CompareContext = createContext<CompareContextType | undefined>(undefined);
 
 export const CompareProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [compareList, setCompareList] = useState<Product[]>(() => {
-    const saved = localStorage.getItem('romag_compare');
-    return saved ? JSON.parse(saved) : [];
+    return readStored(
+      COMPARE_STORAGE_KEY,
+      (value): value is Product[] => Array.isArray(value) && value.length <= 3 && value.every(isProduct),
+      [],
+    );
   });
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('romag_compare', JSON.stringify(compareList));
+    writeStored(COMPARE_STORAGE_KEY, compareList);
     // Auto-open bar when items exist
     if (compareList.length > 0) setIsOpen(true);
   }, [compareList]);
