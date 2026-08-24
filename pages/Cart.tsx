@@ -69,7 +69,7 @@ const Cart: React.FC = () => {
   const generateWhatsAppLink = () => {
     if (!validateForm()) return;
 
-    let message = `Hola Estufas Romag! Quiero realizar el siguiente pedido:\n\n`;
+    let message = `Resumen generado por una demo de portfolio (no constituye un pedido):\n\n`;
     
     // Items
     message += `*DETALLE DEL PEDIDO*\n`;
@@ -97,9 +97,9 @@ const Cart: React.FC = () => {
       if (formData.notes) message += `📝 Notas: ${formData.notes}\n`;
     }
 
-    message += `\nQuedo a la espera de la confirmación y datos de pago.`;
+    message += `\nEste texto es ilustrativo. La demo no solicita confirmación ni datos de pago.`;
     
-    window.open(`${COMPANY_INFO.whatsappLink}?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`${COMPANY_INFO.whatsappLink}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     setIsSubmitted(true);
   };
 
@@ -212,7 +212,7 @@ const Cart: React.FC = () => {
               {/* Header */}
               <div className="bg-romag-dark text-white p-4">
                 <h2 className="text-lg font-bold flex items-center gap-2">
-                  <CheckCircle2 size={20} className="text-romag-orange" /> Finalizar Pedido
+                  <CheckCircle2 size={20} className="text-romag-orange" /> Preparar resumen demostrativo
                 </h2>
               </div>
 
@@ -377,10 +377,10 @@ const Cart: React.FC = () => {
                     disabled={isSubmitted}
                     className="w-full bg-green-500 text-white py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-green-600 transition-all shadow-md hover:shadow-lg hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <MessageCircle size={24} /> {isSubmitted ? 'Pedido Enviado' : 'FINALIZAR PEDIDO'}
+                    <MessageCircle size={24} /> {isSubmitted ? 'APERTURA SOLICITADA' : 'PREPARAR EN WHATSAPP'}
                   </button>
                   <p className="text-[10px] text-center text-gray-400 mt-2">
-                    Al confirmar, serás redirigido a WhatsApp con el detalle de tu pedido para que un vendedor lo procese.
+                    La demo no crea ni confirma pedidos. Al continuar, nombre, contacto, entrega y carrito se incluyen en una URL para abrir WhatsApp; revisá y enviá allí solo si querés compartirlos.
                   </p>
                 </div>
 

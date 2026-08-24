@@ -23,21 +23,21 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10 text-white">
           <div className="max-w-2xl">
             <div className="inline-block bg-romag-orange px-3 py-1 rounded-sm text-xs font-bold tracking-widest mb-4 shadow-lg">
-              DESDE 1990 FABRICANDO CALIDAD
+              CATÁLOGO ILUSTRATIVO
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-md">
               El calor de hogar <br/>
               <span className="text-romag-orange">hecho para durar.</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 font-light leading-relaxed max-w-lg">
-              Estufas de alto rendimiento, fogoneros y parrillas con la robustez industrial que tu familia merece.
+              Una demostración de navegación, comparación y carrito para productos de calefacción.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/catalogo" className="bg-romag-orange hover:bg-orange-600 text-white px-8 py-4 rounded font-bold text-center transition-transform hover:-translate-y-1 shadow-lg shadow-orange-900/50">
                 VER CATÁLOGO
               </Link>
               <Link to="/representantes" className="bg-transparent border-2 border-white hover:bg-white hover:text-romag-dark text-white px-8 py-4 rounded font-bold text-center transition-colors">
-                DONDE COMPRAR
+                 PUNTOS DE VENTA DEMO
               </Link>
             </div>
           </div>
@@ -50,22 +50,22 @@ const Home: React.FC = () => {
           <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 hover:shadow-lg transition-all transform hover:-translate-y-1">
             <div className="bg-orange-50 p-3 rounded-lg text-romag-orange border border-orange-100"><ShieldCheck size={32} /></div>
             <div>
-              <h3 className="font-bold text-xl text-gray-900 mb-2">Garantía de Fábrica</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Productos testeados para durar toda la vida. Materiales de primera calidad certificada.</p>
+              <h3 className="font-bold text-xl text-gray-900 mb-2">Catálogo demostrativo</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">Productos y especificaciones ilustrativos para recorrer la experiencia.</p>
             </div>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 hover:shadow-lg transition-all transform hover:-translate-y-1">
             <div className="bg-orange-50 p-3 rounded-lg text-romag-orange border border-orange-100"><Truck size={32} /></div>
             <div>
-              <h3 className="font-bold text-xl text-gray-900 mb-2">Envíos a todo el País</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Llegamos a cada rincón de Argentina con logística segura y embalaje reforzado.</p>
+              <h3 className="font-bold text-xl text-gray-900 mb-2">Flujo de cotización</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">El carrito prepara una consulta; no crea pedidos ni coordina envíos.</p>
             </div>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 hover:shadow-lg transition-all transform hover:-translate-y-1">
             <div className="bg-orange-50 p-3 rounded-lg text-romag-orange border border-orange-100"><PenTool size={32} /></div>
             <div>
-              <h3 className="font-bold text-xl text-gray-900 mb-2">Diseño Funcional</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Estética moderna industrial que optimiza el consumo y mejora visualmente tu espacio.</p>
+              <h3 className="font-bold text-xl text-gray-900 mb-2">Comparador local</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">Hasta tres productos de una categoría, sin enviar datos a un servidor.</p>
             </div>
           </div>
         </div>
@@ -131,15 +131,15 @@ const Home: React.FC = () => {
           <div className="md:w-1/2">
              <div className="inline-flex items-center gap-2 text-romag-orange font-bold mb-6 tracking-wider bg-white/10 px-4 py-2 rounded-full">
                <Flame size={18} />
-               <span className="text-sm">INDUSTRIA ARGENTINA</span>
+               <span className="text-sm">SECCIÓN DE PROCESO ILUSTRATIVA</span>
              </div>
-             <h2 className="text-5xl font-extrabold mb-8 leading-tight">Forjado con pasión,<br/>diseñado para la vida.</h2>
+             <h2 className="text-5xl font-extrabold mb-8 leading-tight">Contenido visual<br/>para evaluar el frontend.</h2>
              <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
                 <p className="text-gray-300 mb-6 text-lg leading-relaxed">
-                  En Estufas Romag controlamos cada paso del proceso productivo. Desde la selección del acero hasta el soldado de precisión y el acabado final. No ensamblamos, <strong>fabricamos</strong>.
+                  Esta composición representa cómo podría explicarse un proceso industrial. No documenta una fábrica, procedencia ni método productivo verificados.
                 </p>
                 <Link to="/nosotros" className="text-white font-bold hover:text-romag-orange transition-colors inline-flex items-center gap-2">
-                  CONOCÉ NUESTRA FÁBRICA <ArrowRight size={16} />
+                  CONOCÉ EL ALCANCE DE LA DEMO <ArrowRight size={16} />
                 </Link>
              </div>
           </div>
@@ -157,7 +157,7 @@ const Home: React.FC = () => {
       {/* Testimonials */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-           <h2 className="text-center text-3xl font-extrabold mb-16 text-gray-900">Historias Reales de Clientes</h2>
+           <h2 className="text-center text-3xl font-extrabold mb-16 text-gray-900">Testimonios de muestra</h2>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
              {TESTIMONIALS.map(t => (
                <div key={t.id} className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 relative hover:shadow-lg transition-all hover:-translate-y-1">
