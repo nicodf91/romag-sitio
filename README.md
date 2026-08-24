@@ -1,20 +1,46 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Romag — catálogo web de demostración
 
-# Run and deploy your AI Studio app
+Sitio catálogo para estufas y productos de calefacción que demuestra navegación, comparación, carrito y preparación de consultas por WhatsApp.
 
-This contains everything you need to run your app locally.
+> Catálogo, precios, métricas, representantes y testimonios son ilustrativos. No hay backend, stock ni creación automática de pedidos.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1pAcBiZYqolOUYuuu7Q32bOEXgkYh16xG
+## Stack
 
-## Run Locally
+React 19, TypeScript, React Router 7, Vite 8, Tailwind CSS 3, Leaflet y D3.
 
-**Prerequisites:**  Node.js
+## Ejecutar
 
+Requiere Node.js `^20.19` o `^22.12`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm ci
+npm run dev
+npm run typecheck
+npm run build
+npm audit
+```
+
+No usa variables de entorno.
+
+## Diseño técnico
+
+- contextos separados para carrito y comparador;
+- persistencia local versionada, validada y tolerante a errores;
+- límite de tres productos comparables de una misma categoría;
+- consulta por WhatsApp mediante acción explícita y pestaña aislada;
+- Tailwind compilado localmente;
+- configuración Vite sin inyección de claves.
+
+## Limitaciones
+
+No procesa pedidos ni pagos, no valida stock/logística y usa contenido e imágenes demostrativas. No hay autenticación, API o suite automatizada.
+
+## Demo
+
+[Ver deployment público](https://romag-sitio.vercel.app)
+
+La URL fue verificada como disponible antes de esta actualización; el código de esta rama solo será visible allí después de integrar y desplegar los cambios.
+
+## Autor
+
+Desarrollado por [Nicolás De Felippe](https://github.com/nicodf91) como proyecto de portfolio.
